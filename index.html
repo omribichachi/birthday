@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fbf3ed" />
     <title>משהו קטן בשבילך 💌</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=photos-1" />
+    <script src="script.js?v=photos-1" defer></script>
   </head>
   <body>
     <div class="decoration decoration-one" aria-hidden="true">♡</div>
     <div class="decoration decoration-two" aria-hidden="true">♡</div>
     <div class="decoration decoration-three" aria-hidden="true">✧</div>
+    <div id="floating-hearts" class="floating-hearts" aria-hidden="true" hidden></div>
 
     <main class="card">
       <div class="envelope" aria-hidden="true">💌</div>
@@ -47,9 +48,65 @@
           <p>החיוך והגומות שלך הן כמו קסם והעיניים שלך שבו אותי בקסמן.</p>
           <p>מגיע לך את כל הטוב שבעולם ואני מקווה שנהנית מהחגיגה המוקדמת שלנו.</p>
         </div>
+        <div class="actions">
+          <button id="kisses-button" class="button button-primary" type="button">שולח לך נשיקות</button>
+        </div>
+      </section>
+
+      <section id="kisses-screen" aria-labelledby="kisses-title" hidden>
+        <h1 id="kisses-title" tabindex="-1">נשיקות רק בשבילך 💋</h1>
+        <div class="photo-frame">
+          <svg class="heart-photo" viewBox="0 0 1000 1000" role="img" aria-labelledby="kisses-photo-description">
+            <title id="kisses-photo-description">תמונה שלי שולח לך נשיקה, במסגרת לב</title>
+            <defs>
+              <clipPath id="kisses-photo-clip">
+                <path d="M500 930 C460 895 65 635 65 325 C65 80 365 20 500 230 C635 20 935 80 935 325 C935 635 540 895 500 930Z" />
+              </clipPath>
+            </defs>
+            <image href="photo-kisses.jpg" width="1000" height="1000" preserveAspectRatio="xMidYMid slice" clip-path="url(#kisses-photo-clip)" />
+            <path class="heart-frame-border" d="M500 930 C460 895 65 635 65 325 C65 80 365 20 500 230 C635 20 935 80 935 325 C935 635 540 895 500 930Z" />
+          </svg>
+        </div>
+        <div class="actions">
+          <button id="hearts-button" class="button button-primary" type="button">שולח לך לבבות ♡</button>
+        </div>
+      </section>
+
+      <section id="heart-screen" aria-labelledby="heart-title" hidden>
+        <h1 id="heart-title" tabindex="-1">תשלימי את הלב</h1>
+        <p class="photo-caption">החצי השני שמור לך ♡</p>
+        <div id="half-heart-frame" class="photo-frame">
+          <svg class="heart-photo" viewBox="0 0 1000 1000" role="img" aria-labelledby="heart-photo-description">
+            <title id="heart-photo-description">תמונה שלי עושה חצי לב עם היד, במסגרת לב</title>
+            <defs>
+              <clipPath id="half-heart-photo-clip">
+                <path d="M500 930 C460 895 65 635 65 325 C65 80 365 20 500 230 C635 20 935 80 935 325 C935 635 540 895 500 930Z" />
+              </clipPath>
+            </defs>
+            <image href="photo-half-heart.jpg" width="1000" height="1000" preserveAspectRatio="xMidYMid slice" clip-path="url(#half-heart-photo-clip)" />
+            <path class="heart-frame-border" d="M500 930 C460 895 65 635 65 325 C65 80 365 20 500 230 C635 20 935 80 935 325 C935 635 540 895 500 930Z" />
+          </svg>
+        </div>
+        <p id="completion-status" class="photo-caption" role="status" hidden></p>
+        <button id="complete-heart-inline" class="button button-primary" type="button" hidden>יאללה להשלים את הלב</button>
       </section>
 
       <p class="signature">עם המון אהבה <span aria-hidden="true">♡</span></p>
     </main>
+
+    <dialog id="heart-prompt" class="love-dialog" aria-labelledby="heart-prompt-title" aria-describedby="heart-prompt-description">
+      <button class="dialog-close" type="button" aria-label="סגירת ההודעה">×</button>
+      <span class="dialog-heart" aria-hidden="true">♡</span>
+      <h2 id="heart-prompt-title">למה לא השלמת את הלב?</h2>
+      <p id="heart-prompt-description">קדימה, תעשי לב ♡</p>
+      <button id="complete-heart-button" class="button button-primary" type="button" autofocus>יאללה להשלים את הלב</button>
+    </dialog>
+
+    <dialog id="heart-complete" class="love-dialog" aria-labelledby="heart-complete-title">
+      <button class="dialog-close" type="button" aria-label="סגירת ההודעה">×</button>
+      <span class="dialog-heart" aria-hidden="true">❤️</span>
+      <h2 id="heart-complete-title">עכשיו הלב שלם.</h2>
+      <button id="close-complete-button" class="button button-primary" type="button" autofocus>הלב שלנו ♡</button>
+    </dialog>
   </body>
 </html>
