@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fbf3ed" />
+    <title>משהו קטן בשבילך 💌</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="decoration decoration-one" aria-hidden="true">♡</div>
+    <div class="decoration decoration-two" aria-hidden="true">♡</div>
+    <div class="decoration decoration-three" aria-hidden="true">✧</div>
+
+    <main class="card">
+      <div class="envelope" aria-hidden="true">💌</div>
+      <p class="eyebrow">רק בשבילך</p>
+
+      <section id="first-screen" aria-labelledby="question">
+        <h1 id="question">האם חשבת שאין ברכה ליום הולדת שלך?</h1>
+        <p class="subtitle">יש לי שאלה קטנה לפני שמתחילים…</p>
+        <div class="actions">
+          <button id="yes-button" class="button button-secondary" type="button">כן</button>
+          <button id="no-button" class="button button-primary" type="button">לא</button>
+        </div>
+        <p id="answer-hint" class="answer-hint" role="status"></p>
+      </section>
+
+      <section id="next-screen" aria-labelledby="next-title" hidden>
+        <h1 id="next-title" tabindex="-1">ברור שלא שכחתי אותך ♡</h1>
+        <p class="subtitle">ההפתעה שלך בדרך…</p>
+      </section>
+
+      <p class="signature">עם המון אהבה <span aria-hidden="true">♡</span></p>
+    </main>
+  </body>
+</html>
