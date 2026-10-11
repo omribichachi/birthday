@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#fbf3ed" />
     <title>יום הולדת שמח 💌</title>
     <link rel="stylesheet" href="styles.css?v=photos-1" />
-    <script src="script.js?v=photos-1" defer></script>
+    <script src="script.js?v=heart-ending-2" defer></script>
   </head>
   <body>
     <div class="decoration decoration-one" aria-hidden="true">♡</div>
@@ -93,6 +93,7 @@
           </svg>
         </div>
         <p id="completion-status" class="photo-caption" role="status" hidden></p>
+        <p id="distance-message" class="photo-caption" hidden>גם כשאני רחוק, החצי השני שלי תמיד אצלך ❤️</p>
         <button id="complete-heart-inline" class="button button-primary" type="button" hidden>יאללה להשלים את הלב</button>
       </section>
 
@@ -107,10 +108,11 @@
       <button id="complete-heart-button" class="button button-primary" type="button" autofocus>יאללה להשלים את הלב</button>
     </dialog>
 
-    <dialog id="heart-complete" class="love-dialog" aria-labelledby="heart-complete-title">
+    <dialog id="heart-complete" class="love-dialog" aria-labelledby="heart-complete-title" aria-describedby="heart-complete-message">
       <button class="dialog-close" type="button" aria-label="סגירת ההודעה">×</button>
       <span class="dialog-heart" aria-hidden="true">❤️</span>
       <h2 id="heart-complete-title">עכשיו הלב שלם.</h2>
+      <p id="heart-complete-message">גם כשאני רחוק, החצי השני שלי תמיד אצלך ❤️</p>
       <button id="close-complete-button" class="button button-primary" type="button" autofocus>הלב שלנו ♡</button>
     </dialog>
   </body>

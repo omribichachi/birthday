@@ -15,6 +15,7 @@ const heartComplete = document.querySelector('#heart-complete');
 const completeHeartButton = document.querySelector('#complete-heart-button');
 const completeHeartInline = document.querySelector('#complete-heart-inline');
 const completionStatus = document.querySelector('#completion-status');
+const distanceMessage = document.querySelector('#distance-message');
 const halfHeartFrame = document.querySelector('#half-heart-frame');
 const screens = [firstScreen, nextScreen, greetingScreen, kissesScreen, heartScreen];
 let promptTimer;
@@ -63,6 +64,7 @@ heartsButton.addEventListener('click', () => {
   showScreen(heartScreen);
   completionStarted = false;
   completionStatus.hidden = true;
+  distanceMessage.hidden = true;
   completeHeartInline.hidden = true;
   halfHeartFrame.classList.remove('heart-is-complete');
   promptTimer = setTimeout(() => {
@@ -82,6 +84,7 @@ function completeHeart() {
   completionTimer = setTimeout(() => {
     if (heartScreen.hidden) return;
     completionStatus.textContent = 'עכשיו הלב שלם ❤️';
+    distanceMessage.hidden = false;
     halfHeartFrame.classList.add('heart-is-complete');
     heartComplete.showModal();
   }, 2000);
