@@ -74,6 +74,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 14px;
+  margin-top: 30px;
 }
 
 .button {
@@ -102,8 +103,27 @@ h1 {
 .decoration-two { bottom: 12%; right: 10%; font-size: 90px; transform: rotate(18deg); }
 .decoration-three { top: 20%; right: 16%; font-size: 44px; }
 [hidden] { display: none !important; }
-#next-screen { animation: appear 450ms ease-out both; }
-#next-title:focus { outline: none; }
+#next-screen, #greeting-screen { animation: appear 450ms ease-out both; }
+#next-title:focus, #greeting-title:focus { outline: none; }
+
+#greeting-title { font-size: clamp(30px, 5vw, 40px); }
+.dedication { margin: 12px 0 30px; color: #aa5966; font-size: 20px; line-height: 1.8; }
+.greeting-copy { font-size: 19px; line-height: 1.9; }
+.greeting-copy p { margin: 0 0 24px; text-wrap: pretty; }
+.greeting-copy p:last-child { margin-bottom: 0; }
+.greeting-copy strong { font-weight: 600; color: #ab4e64; }
+.big-heart {
+  display: block;
+  width: min(100%, 280px);
+  height: auto;
+  margin: -12px auto 18px;
+  animation: heartbeat 3s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
 
 @keyframes appear {
   from { opacity: 0; transform: translateY(12px); }
@@ -113,6 +133,8 @@ h1 {
 @media (max-width: 480px) {
   .card { padding: 36px 22px 24px; border-radius: 26px; }
   .button { min-width: 112px; }
+  .greeting-copy { font-size: 18px; }
+  .big-heart { width: min(100%, 230px); }
   .decoration-one { top: 4%; left: 5%; font-size: 44px; }
   .decoration-two { bottom: 3%; right: 5%; font-size: 54px; }
   .decoration-three { top: 7%; right: 10%; font-size: 30px; }
